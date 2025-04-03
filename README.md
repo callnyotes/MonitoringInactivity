@@ -94,7 +94,24 @@ This project is a Flask-based application designed to monitor user inactivity an
    2. Open a browser and navigate to [http://127.0.0.1:5001](http://127.0.0.1:5001).
    3. Use the interface to start/stop monitoring, process logs, and view log files.
 
-## Example Log File
 
+## Example Log File
 A sample log file might look like this:
+
+Script started at: 03/31/2025 10:00:00
+Inactivity Start: 03/31/2025 10:15:00 | Inactivity End: 03/31/2025 10:20:00 | Total Inactivity Duration: 0:05:00
+Script stopped at: 03/31/2025 11:00:00
+
+
+## Troubleshooting
+
+- **"Monitoring is currently running..." message appears incorrectly:**
+  - Ensure the `session['monitoring']` variable is properly initialized in the / route.
+
+- **PermissionError when creating log files:**
+  - Verify that the application has write permissions for the specified directory.
+
+- **Invalid date format error:**
+  - Ensure the end time is entered in the format mm/dd/yyyy hh:mm:ss.
+
 
