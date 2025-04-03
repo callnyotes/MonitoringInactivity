@@ -1,7 +1,4 @@
 # MonitoringInactivity
-Project to monitor inactivity on my laptop and write to output
-
-MonitoringActivity
 
 This project is a Flask-based application designed to monitor user inactivity and log it to a file. It provides a web interface for starting and stopping the monitoring process, processing log files, and viewing inactivity reports.
 
