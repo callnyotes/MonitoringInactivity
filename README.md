@@ -98,9 +98,9 @@ This project is a Flask-based application designed to monitor user inactivity an
 ## Example Log File
 A sample log file might look like this:
 
-Script started at: 03/31/2025 10:00:00
-Inactivity Start: 03/31/2025 10:15:00 | Inactivity End: 03/31/2025 10:20:00 | Total Inactivity Duration: 0:05:00
-Script stopped at: 03/31/2025 11:00:00
+- **Script started at: 03/31/2025 10:00:00**
+- **Inactivity Start: 03/31/2025 10:15:00 | Inactivity End: 03/31/2025 10:20:00 | Total Inactivity Duration: 0:05:00**
+- **Script stopped at: 03/31/2025 11:00:00**
 
 
 ## Troubleshooting
