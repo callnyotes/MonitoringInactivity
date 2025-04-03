@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Links</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .monitoring {
+            font-weight: bold;
+            color: red;
+        }
+        .quick-links a {
+            text-decoration: none;
+        }
+        .list-group-item:hover {
+            background-color: #f8f9fa;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body class="container my-4">
+    <!-- Header -->
+    <header class="mb-4">
+        <h1 class="text-center">Common Links and Inactivity Logging</h1>
+    </header>
+    <br>
+    <h2 class="mb-3">Inactivity Logging and Reporting</h2>
+        <!-- Start Monitoring Form -->
+        <form action="/start" method="post" class="mb-4">
+            <div class="mb-3">
+                <label for="file_path" class="form-label">File Path:</label>
+                <input type="text" name="file_path" id="file_path" class="form-control" value="{{ default_output_path }}">
+            </div>
+            <div class="mb-3">
+                <label for="end_time" class="form-label">End Time:</label>
+                <input type="text" name="end_time" id="end_time" class="form-control" 
+                       placeholder="mm/dd/yyyy hh:mm:ss" 
+                       pattern="\d{2}/\d{2}/\d{4} \d{2}:\d{2}:\d{2}" 
+                       title="Example: 01/01/2022 12:00:00">
+                <small class="text-muted">If no end time is entered, it will automatically end at 11:59:59 PM.</small>
+            </div>
+            <button type="submit" class="btn btn-success">Start Monitoring</button>
+        </form>
+    
+        <!-- Stop Monitoring Form -->
+        <form action="/stop" method="post" class="mb-4" onsubmit="return confirm('Are you sure you want to stop monitoring?');">
+            <button type="submit" class="btn btn-danger">Stop Monitoring</button>
+        </form>
+    
+        <!-- Monitoring Status -->
+        {% if monitoring %}
+        <p class="alert alert-warning">Monitoring is currently running...</p>
+        {% endif %}
+
+    <!-- Log Processing Page -->
+    <form action="/process_logs" method="get" target="_blank" class="mb-4">
+        <button type="submit" class="btn btn-secondary">Go to Log Processing Page</button>
+    </form>
+    <br>
+    <!-- Quick Links Section -->
+    <section class="quick-links">
+        <h2 class="mb-3">Quick Links</h2>
+        <div class="list-group">
+            <a href="https://app.aitrium.app.atlas.gfs-emea-ai-platform.aws.fisv.cloud" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fas fa-link"></i> Aitrium
+            </a>
+            <a href="https://fpisp-nix.cyberark.cloud/privilegecloud/Accounts" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fas fa-lock"></i> CyberArk - Linux Privilege Cloud
+            </a>
+            <a href="https://enterprise-confluence.onefiserv.net/display/CUS/Family+-+CUnify" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fas fa-book"></i> Confluence - CUnify
+            </a>
+            <a href="https://cunifyweb04-btat2.onefiserv.net/cunifydevNew.html" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fas fa-code"></i> DEV Environment
+            </a>
+            <a href="https://www.github.com" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://cunifyweb02-btat2.onefiserv.net/cunifyqa.html" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fas fa-vial"></i> QA Environment
+            </a>
+            <a href="https://nexus-dev.onefiserv.net" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fas fa-database"></i> Nexus Software Repository
+            </a>
+            <a href="https://ondemand.fiserv.com" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fas fa-cloud"></i> OnDemand
+            </a>
+            <a href="https://app.sapienceanalytics.com" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fas fa-chart-line"></i> Sapience
+            </a>
+            <a href="http://trovd000007:8080/tfs/Cus/CUnify/_queries/all/" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fas fa-tasks"></i> TFS Queries
+            </a>
+            <a href="https://venafi.1dc.com/Aperture/" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fas fa-certificate"></i> Venafi - Certificate Management
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-5 text-center text-muted">
+        &copy; 2025 My Links Page
+    </footer>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
