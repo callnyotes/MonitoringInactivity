@@ -1,0 +1,28 @@
+You can view a comprehensive list of available Font Awesome icons and their corresponding values on the official Font Awesome website:
+
+Font Awesome Icon Library
+URL: https://fontawesome.com/icons
+
+How to Use the Icon Library
+1. Visit the Font Awesome Icons page.
+2. Use the search bar to find icons related to your desired topic (e.g., "identity," "security," "user").
+3. Click on an icon to view its details, including the class value (e.g., fas fa-id-card).
+4. Copy the class value and use it in your HTML.
+
+Example Search
+Searching for "identity" might show icons like:
+    fa-user-shield
+    fa-id-card
+    fa-user-circle
+
+Searching for "security" might show icons like:
+    fa-lock
+    fa-shield-alt
+    fa-key
+
+Additional Resources
+Icon Categories: Browse icons by categories like "Web Application," "Security," or "User Interface."
+Icon Styles: Font Awesome offers different styles such as:
+    Solid: fas (default for most icons)
+    Regular: far
+    Brands: fab (e.g., GitHub, Facebook)
