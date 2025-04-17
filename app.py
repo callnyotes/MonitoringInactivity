@@ -14,11 +14,10 @@ stop_flag = threading.Event()
 
 @app.route('/')
 def index():
-    session.clear()  # Clear the session when the application starts
     default_output_path = "C:\\Users\\F7OUTO9\\Documents\\Inactivity_Logging"
     if 'monitoring' not in session:
-        session['monitoring'] = False
-    monitoring = session.get('monitoring', False)
+        session['monitoring'] = False  # Initialize monitoring to False
+    monitoring = session.get('monitoring', False)  # Retrieve the monitoring status
     return render_template('index.html', default_output_path=default_output_path, monitoring=monitoring, datetime=datetime)
 
 @app.route('/start', methods=['POST'])
@@ -182,7 +181,7 @@ def view_file():
     with open(log_file_path, 'r') as file:
         file_contents = file.read()
 
-    return render_template('view_file.html', log_file=log_file, file_contents=file_contents)
+    return render_template('view_file.html', log_file=log_file, log_directory=log_directory, file_contents=file_contents)
 
 class InactivityLogger:
     def __init__(self, output_file=None, end_time=None, stop_flag=None):

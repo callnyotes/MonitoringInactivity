@@ -30,6 +30,12 @@
         {% if file_contents %}
         <h2 class="mb-3">File: {{ log_file }}</h2>
         <pre class="border p-3 bg-light">{{ file_contents }}</pre>
+        <!-- Process Button -->
+        <form action="/process_log" method="post" class="mt-4">
+            <input type="hidden" name="log_file" value="{{ log_file }}">
+            <input type="hidden" name="log_directory" value="{{ log_directory }}">
+            <button type="submit" class="btn btn-primary">Process</button>
+        </form>
         {% else %}
         <p class="text-danger">No file selected or file is empty.</p>
         {% endif %}
